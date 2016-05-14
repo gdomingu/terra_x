@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Land Listings</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Address</th>
+      <th>Type</th>
+      <th>Price</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @listings.each do |listing| %>
+      <!-- this will be a card -->
+      <tr>
+        <td>
+          <p><%= "#{listing.address_1}" %></p>
+          <p><%= "#{listing.address_city}, #{listing.address_state}" %></p><p><%= listing.address_zip %></p>
+        </td>
+        <td><%= listing.land_type %></td>
+        <td>$<%= listing.price %></td>
+        <td><%= link_to 'Show', listing %></td>
+        <td><%= link_to 'Edit', edit_listing_path(listing) %></td>
+        <td><%= link_to 'Destroy', listing, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <!-- end card -->
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Listing', new_listing_path %>
