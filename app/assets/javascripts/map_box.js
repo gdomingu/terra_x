@@ -7,7 +7,7 @@ window.setupMap = function(){
     console.log(lat)
     console.log(long)
     
-    map.setView([lat, long], 16);
+    map.setView([lat, long], 9);
 
     L.mapbox.featureLayer({
         // this feature is in the GeoJSON format: see geojson.org
