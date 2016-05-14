@@ -7,4 +7,8 @@ class Listing < ActiveRecord::Base
     "#{address_1} #{address_2} #{address_city}, #{address_state} #{address_zip}"
   end
 
+  def is_highest_bidder
+    Listing.order(:price_cents).first.id == self.id
+  end
+
 end
