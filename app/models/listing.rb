@@ -1,6 +1,6 @@
 class Listing < ActiveRecord::Base
   monetize :price_cents
-  geocoded_by :full_street_address, :lookup => :yandex   # can also be an IP address
+  geocoded_by :full_street_address   # can also be an IP address
   after_validation :geocode 
 
   def full_street_address
