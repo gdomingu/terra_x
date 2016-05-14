@@ -16,7 +16,7 @@
   <div class="col s7">
     <div class="row no-bottom-margin">
       <div class="input-field col s8">
-        <input type="text" value="" placeholder="Enter location here..." />
+        <input type="text" value="" placeholder="Enter location here..." id='search-city'/>
       </div>
       <div class="input-field col s4">
         <select>
@@ -48,7 +48,7 @@
     <!-- this will be a card -->
     <div class="listings">
       <% @listings.each do |listing| %>
-        <div class="card grey lighten-5 z-depth-1 col s6 listing" data-long=<%=listing.longitude%> data-lat=<%=listing.latitude%>>
+        <div class="card grey lighten-5 z-depth-1 col s6 listing" data-long=<%=listing.longitude%> data-lat=<%=listing.latitude%> data-city=<%="#{listing.address_city.gsub(" ", "")}"%>>
           <div class="row no-bottom-margin">
             <div class="col s4">
               <img src="http://aerialimagingsolution.com/wp-content/uploads/2013/04/research.jpg" alt="ariel image" class=" responsive-img">
