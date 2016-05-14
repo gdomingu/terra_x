@@ -2,7 +2,7 @@
   <div class="nav-wrapper container">
     <a id="logo-container" href="/" class="brand-logo">Terra X</a>
     <ul class="right hide-on-med-and-down">
-      <li><a href="/listings">See listings</a></li>
+      <li><a href="/listings/new">List a Property</a></li>
     </ul>
 
     <ul id="nav-mobile" class="side-nav">
@@ -52,7 +52,7 @@
   <div class="col s7">
   <!-- this will be a card -->
   <% @listings.each do |listing| %>
-    <div class="card-panel grey lighten-5 z-depth-1">
+    <div class="card-panel grey lighten-5 z-depth-1 listing" data-long=<%=listing.longitude%> data-lat=<%=listing.longitude%>>
       <div class="row valign-wrapper">
         <div class="col s2">
           <img src="http://aerialimagingsolution.com/wp-content/uploads/2013/04/research.jpg" alt="ariel image" class="circle responsive-img">
@@ -75,6 +75,8 @@
   <!-- end card -->
   </div>
   <div class="col s5">
-    <img src="http://www.trbimg.com/img-529d02bb/turbine/la-me-ln-human-remains-humboldt-county-2013120-001/600/600x360" alt="map" class="responsive-img">
+    <div id='map-wrapper' style='position:relative;height:320px;overflow-hidden;'>
+      <div id='map-one' class='map'> </div>
+    </div>
   </div>
 </div>

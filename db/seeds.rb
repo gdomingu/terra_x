@@ -6,6 +6,5 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 types = ['wind', 'water', 'solar']
-10.times do
-  Listing.create(address_1: Faker::Address.street_address, address_2: Faker::Address.secondary_address, address_zip: Faker::Address.zip, address_city: Faker::Address.city, address_state: Faker::Address.state, land_type: types.sample, price: rand(10000..50000), end_at: Faker::Time.forward(rand(5..15), :morning))
-end
+
+Listing.create(address_1: "7950 Camp Rock Road", address_zip: 92356, address_city: "Lucerne Valley", address_state: "CA", land_type: types.sample, price: rand(10000..50000), end_at: Faker::Time.forward(rand(5..15), :morning))
