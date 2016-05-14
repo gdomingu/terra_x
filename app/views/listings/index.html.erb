@@ -1,36 +1,83 @@
+<nav class="white" role="navigation">
+  <div class="nav-wrapper container">
+    <a id="logo-container" href="/" class="brand-logo">Terra X</a>
+    <ul class="right hide-on-med-and-down">
+      <li><a href="/listings">See listings</a></li>
+    </ul>
+
+    <ul id="nav-mobile" class="side-nav">
+      <li><a href="#">Navbar Link</a></li>
+    </ul>
+    <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+  </div>
+</nav>
 <p id="notice"><%= notice %></p>
-
-<h1>Land Listings</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Address</th>
-      <th>Type</th>
-      <th>Price</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @listings.each do |listing| %>
-      <!-- this will be a card -->
-      <tr>
-        <td>
-          <p><%= "#{listing.address_1}" %></p>
-          <p><%= "#{listing.address_city}, #{listing.address_state}" %></p><p><%= listing.address_zip %></p>
-        </td>
-        <td><%= listing.land_type %></td>
-        <td>$<%= listing.price %></td>
-        <td><%= link_to 'Show', listing %></td>
-        <td><%= link_to 'Edit', edit_listing_path(listing) %></td>
-        <td><%= link_to 'Destroy', listing, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <!-- end card -->
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Listing', new_listing_path %>
+<div class="row">
+  <div class="input-field col s4">
+    <input type="text" value="" placeholder="Enter location here..." />
+  </div>
+  <div class="input-field col s2">
+    <select>
+      <option value="" disabled selected>Choose your option</option>
+      <option value="1">Option 1</option>
+      <option value="2">Option 2</option>
+      <option value="3">Option 3</option>
+    </select>
+  </div>
+</div>
+<div class="row">
+    <p class="col s1">
+      <input type="checkbox" id="solar" />
+      <label for="solar">Solar</label>
+    </p>
+    <p class="col s1">
+      <input type="checkbox" id="wind" />
+      <label for="wind">Wind</label>
+    </p>
+    <p class="col s1">
+      <input type="checkbox" id="water" />
+      <label for="water">Water</label>
+    </p>
+</div>
+<div class="row">
+  <form action="#">
+    <p class="col s3 range-field">Acres
+      <input type="range" id="acreage" min="0" max="1000" />
+    </p>
+  </form>
+</div>
+<div class="row">
+  <h5 class="col s2 offset-s2">Address</h5>
+  <h5 class="col s3">Type</h5>
+  <h5 class="col s2">Price</h5>
+</div>
+<div class="row">
+  <div class="col s7">
+  <!-- this will be a card -->
+  <% @listings.each do |listing| %>
+    <div class="card-panel grey lighten-5 z-depth-1">
+      <div class="row valign-wrapper">
+        <div class="col s2">
+          <img src="http://aerialimagingsolution.com/wp-content/uploads/2013/04/research.jpg" alt="ariel image" class="circle responsive-img">
+        </div>
+        <div class="col s10">
+          <div class="row no-bottom-margin">
+            <p class="col s4"><%= "#{listing.address_1}," %><br><%= "#{listing.address_city}, #{listing.address_state}, #{listing.address_zip}" %></p>
+            <p class="col s4"><%= listing.land_type %></p>
+            <p class="col s4">$<%= listing.price %></p>
+          </div>
+          <div class="row">
+            <p class="col s2"><%= link_to 'Show', listing %></p>
+            <p class="col s2"><%= link_to 'Edit', edit_listing_path(listing) %></p>
+            <p class="col s2"><%= link_to 'Destroy', listing, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+  <!-- end card -->
+  </div>
+  <div class="col s5">
+    <img src="http://www.trbimg.com/img-529d02bb/turbine/la-me-ln-human-remains-humboldt-county-2013120-001/600/600x360" alt="map" class="responsive-img">
+  </div>
+</div>
