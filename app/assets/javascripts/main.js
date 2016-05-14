@@ -1,5 +1,6 @@
 window.setupHome = function(){
-  alert('foo');
+  $('.button-collapse').sideNav();
+  $('.parallax').parallax();
 }
 
 
