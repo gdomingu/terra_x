@@ -28,13 +28,17 @@ class ListingsController < ApplicationController
 
     respond_to do |format|
       if @listing.save
-        format.html { redirect_to @listing, notice: 'Listing was successfully created.' }
+        format.html { redirect_to listings_path, notice: 'Listing was successfully created.' }
         format.json { render :show, status: :created, location: @listing }
       else
         format.html { render :new }
         format.json { render json: @listing.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+  def confirm
+
   end
 
   # PATCH/PUT /listings/1

@@ -1,4 +1,5 @@
 <p id="notice"><%= notice %></p>
+<%= link_to 'Post Listing', new_listing_path %>
 
 <h1>Land Listings</h1>
 
@@ -22,15 +23,9 @@
         </td>
         <td><%= listing.land_type %></td>
         <td>$<%= listing.price %></td>
-        <td><%= link_to 'Show', listing %></td>
-        <td><%= link_to 'Edit', edit_listing_path(listing) %></td>
-        <td><%= link_to 'Destroy', listing, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= link_to 'See Details', listing %></td>
       </tr>
     <!-- end card -->
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Listing', new_listing_path %>
