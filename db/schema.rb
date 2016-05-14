@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160514174120) do
+ActiveRecord::Schema.define(version: 20160514185525) do
+
+  create_table "bids", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "amount_cents",    default: 0,     null: false
+    t.string   "amount_currency", default: "USD", null: false
+    t.integer  "listing_id"
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
+  end
 
   create_table "listings", force: :cascade do |t|
     t.string   "address_1"
@@ -21,9 +30,11 @@ ActiveRecord::Schema.define(version: 20160514174120) do
     t.string   "address_state"
     t.integer  "user_id"
     t.string   "land_type"
-    t.integer  "price"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.integer  "price_cents",    default: 0,     null: false
+    t.string   "price_currency", default: "USD", null: false
+    t.datetime "end_at"
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
   end
 
 end
