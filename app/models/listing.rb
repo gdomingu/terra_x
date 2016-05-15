@@ -8,7 +8,7 @@ class Listing < ActiveRecord::Base
   end
 
   def is_highest_bidder
-    Listing.order(:price_cents).first.id == self.id
+    Listing.order(:price_cents).last.id == self.id
   end
 
 end
