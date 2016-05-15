@@ -5,7 +5,6 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-User.create
 types = ['wind', 'water', 'solar']
 
 Listing.create(address_1: "7950 Camp Rock Road", address_zip: 92356, address_city: "Lucerne Valley", address_state: "CA", land_type: types.sample, price: rand(10000..50000), end_at: Faker::Time.forward(rand(5..15), :morning), latitude: 34.397342, longitude: -116.864972)
