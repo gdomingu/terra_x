@@ -1,6 +1,7 @@
 <%= render 'layouts/nav' %>
 <div class='row' style='margin-top:2rem;'>
 <div class="listings bids col s12">
+<h4>Your Current Bids</h4>
 <% @listings.each do |listing| %>
   <div class="card grey lighten-5 z-depth-1 col s4 listing" data-long=<%=listing.longitude%> data-lat=<%=listing.latitude%> data-city=<%="#{listing.address_city.gsub(" ", "")}"%>>
     <div class="row no-bottom-margin">
