@@ -8,7 +8,7 @@ class CreateListings < ActiveRecord::Migration
       t.string :address_state
       t.integer :user_id
       t.string :land_type
-      t.money :price
+      t.monetize :price
       t.datetime :end_at
 
       t.timestamps null: false
