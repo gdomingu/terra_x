@@ -1,1 +1,59 @@
-<h2>My Profile</h2>
+<%= render 'layouts/nav' %>
+<div class='row' style='margin-top:2rem;'>
+<div class="listings bids col s12">
+<h4>Your Current Bids</h4>
+<% @listings.each do |listing| %>
+  <div class="card grey lighten-5 z-depth-1 col s4 listing" data-long=<%=listing.longitude%> data-lat=<%=listing.latitude%> data-city=<%="#{listing.address_city.gsub(" ", "")}"%>>
+    <div class="row no-bottom-margin">
+      <div class="col s12">
+        <% if listing.is_highest_bidder %>
+        <div class="row no-bottom-margin">
+          <h5 class="col s12 no-bottom-margin grey-text text-darken-2 offset-s4">HIGHEST BIDDER</h5>
+        </div>
+        <% else %>
+          <div class="row no-bottom-margin" style='height:39.3px;'></div>
+        <% end %>
+      </div>
+      <div class="col s4">
+        <img src="http://aerialimagingsolution.com/wp-content/uploads/2013/04/research.jpg" alt="ariel image" class=" responsive-img">
+        <p class="col s12 no-bottom-margin"><%= "#{listing.address_city}, #{listing.address_state}" %></p>
+      </div>
+      <div class="col s8">
+        <div class="row no-bottom-margin">
+          <h5 class="col s8 no-bottom-margin grey-text text-darken-2">$<%= listing.price %></h5>
+        </div>
+        <div class="row no-bottom-margin">
+          <p class="col s6 no-bottom-margin">100 acres</p>
+        </div>
+        <div class="row no-bottom-margin">
+          <p class="col s12 no-bottom-margin">Bid placed on: <%= (Time.zone.now - (1..6).to_a.sample.days).strftime('%m/%d/%Y') %></p>
+        </div>
+        <div class="row">
+          <p class="col s12 no-bottom-margin">Starting bid $20,0000</p>
+        </div>
+        <a class="waves-effect activator waves-light  light-green darken-2 btn center" style='margin-bottom:1rem;'>View Contract</a>
+        <a class="waves-effect activator waves-light  light-green darken-2 btn center" style='margin-bottom:1rem;'>Accept Bid</a>
+        <a class="waves-effect activator waves-light  light-green darken-2 btn center" style='margin-bottom:1rem;'>Contact TerraX</a>
+      </div>
+    </div>
+  <div class="card-reveal">
+    <div class="row no-bottom-margin">
+      <!-- <div class="col s12 grey-text text-darken-2 no-bottom-margin">Current bid  $<%= listing.price %><i class="material-icons right">close</i></div> -->
+      <span class="card-title grey-text text-darken-2 no-bottom-margin">Current bid  $<%= listing.price %><i class="material-icons right">close</i></span>
+    </div>
+    <div class="row no-bottom-margin">
+      <b class="col s3 no-bottom-margin" style="padding-left: 0;">20 bids</b>
+      <b class="col s7 no-bottom-margin">Expires May, 28th 2016</b>
+      <a class="col s2 no-bottom-margin" href="">Terms</a>
+    </div>
+    <div class="row no-bottom-margin">
+      <div class="input-field col s7 no-bottom-margin" style="padding-left: 0;">
+        <input placeholder="Your bid..." id="first_name" type="text" class="validate no-bottom-margin" style="margin-bottom: 0; padding-left: 0;">
+      </div>
+      <a class="col s4 waves-effect activator waves-light btn modal-trigger" href="#modal1" style="margin-top: 0.5em;">Accept</a>
+    </div>
+  </div>
+  </div>
+<% end %>
+</div>
+</div>
