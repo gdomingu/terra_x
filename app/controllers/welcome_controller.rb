@@ -4,7 +4,7 @@ class WelcomeController < ApplicationController
   end
 
   def profile
-
+    @listings = Listing.all
   end
 
 end
