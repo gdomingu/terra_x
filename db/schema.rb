@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160514205907) do
+ActiveRecord::Schema.define(version: 20160514230240) do
 
   create_table "bids", force: :cascade do |t|
     t.integer  "user_id"
@@ -30,13 +30,18 @@ ActiveRecord::Schema.define(version: 20160514205907) do
     t.string   "address_state"
     t.integer  "user_id"
     t.string   "land_type"
-    t.integer  "price_cents",    default: 0,     null: false
-    t.string   "price_currency", default: "USD", null: false
+    t.integer  "price_cents",     default: 0,     null: false
+    t.string   "price_currency",  default: "USD", null: false
     t.datetime "end_at"
-    t.datetime "created_at",                     null: false
-    t.datetime "updated_at",                     null: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
     t.float    "latitude"
     t.float    "longitude"
+    t.string   "name"
+    t.string   "email"
+    t.string   "phone"
+    t.string   "mailing_address"
+    t.string   "acreage"
   end
 
 end

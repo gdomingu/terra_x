@@ -1,4 +1,23 @@
-<h1>New Listing</h1>
+<nav class="white" role="navigation">
+  <div class="nav-wrapper container">
+    <a id="logo-container" href="/" class="brand-logo">Terra X</a>
+    <ul class="right hide-on-med-and-down">
+      <li><a href="/listings/new">List a Property</a></li>
+    </ul>
 
-<%= render 'form' %>
-
+    <ul id="nav-mobile" class="side-nav">
+      <li><a href="#">Navbar Link</a></li>
+    </ul>
+    <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+  </div>
+</nav>
+<div class="container">
+<h3 class="center">I AM AN INTERESTED LANDOWNER</h3>
+  <div class="row">
+    <p class="col s8 offset-s2 center">Attention Landowners – We are currently siting land throughout the country for solar farm development. Please fill out the form below to find out if your parcel is located in a state in which we are currently doing business. If it is, and if the site passes our preliminary analysis, we will contact you via the email you provide.</p>
+  </div>
+  <div class="row">
+    <p class="col s8 offset-s2 center">Please Note: Land must be 20+ continuous acres, relatively flat and free of wetlands and endangered species.</p>
+  </div>
+  <%= render 'form' %>
+</div>
